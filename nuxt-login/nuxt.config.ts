@@ -1,15 +1,15 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  target:"static",
-  ssr:false,
-  generate:{
-    fallback: true
-  },
-  routeRules: {
-    '/examples/*': { redirect: '/redirect-route' },
-    '/modify-headers-route': { headers: { 'x-magic-of': 'nuxt and vercel' } },
-    '/spa': { ssr: false },
-  },
+  // target:"static",
+  // ssr:false,
+  // generate:{
+  //   fallback: true
+  // },
+  // routeRules: {
+  //   '/examples/*': { redirect: '/redirect-route' },
+  //   '/modify-headers-route': { headers: { 'x-magic-of': 'nuxt and vercel' } },
+  //   '/spa': { ssr: false },
+  // },
   head: {
     title: 'nuxt-login',
     htmlAttrs: {
