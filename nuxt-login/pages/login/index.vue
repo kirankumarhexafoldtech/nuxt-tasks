@@ -9,8 +9,8 @@
                 <label>
                     Password
                 </label>
-                <input type="password" class="form-input">
-                <input type="submit" class="btn btn-primary" v-model="password" >
+                <input type="password" class="form-input" v-model="password">
+                <input type="submit" class="btn btn-primary" >
             </form>
         </div>
 
@@ -37,7 +37,7 @@ export default Vue.extend({
     methods:{
         async handleLogin(){
     
-            const res=getUser(this.email,this.password);
+            const res=await getUser(this.email,this.password);
 
             console.log(res)
         }

@@ -17,7 +17,7 @@ export const getUser=async(email:string,password:string)=>{
             password:password
         })
 
-        const res=await data.request;
+        const res=await data.data;
 
         return res
     }catch(err){
