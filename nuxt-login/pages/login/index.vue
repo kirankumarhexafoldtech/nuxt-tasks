@@ -5,12 +5,12 @@
         <div>
             <form @submit.prevent="handleLogin">
                 <label>Email</label>
-                <input type="text" class="form-input">
+                <input type="text" class="form-input" v-model="email">
                 <label>
                     Password
                 </label>
                 <input type="password" class="form-input">
-                <input type="submit" class="btn btn-secondary" >
+                <input type="submit" class="btn btn-primary" v-model="password" >
             </form>
         </div>
 
@@ -18,6 +18,8 @@
         <div>
             //         username: 'kminchelle',
     // password: '0lelplR',
+
+           
         </div>
     </div>
 </template>
@@ -26,13 +28,23 @@
 import Vue from "vue"
 import {getUser} from "~/composables/api"
 export default Vue.extend({
+    data(){
+        return{
+            email:"",
+            password:""
+        }
+    },
     methods:{
         async handleLogin(){
     
-            const res=getUser("kminchelle","0lelplR");
+            const res=getUser(this.email,this.password);
 
             console.log(res)
         }
-    }
+    },
+   created(){
+    console.log(process.env.BASE_API)
+   }
+    
 })
 </script>
